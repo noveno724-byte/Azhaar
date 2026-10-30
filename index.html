@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تحدّي خبيرات الأزهار</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff8c9;--card:#fffdf0;--dg:#1b5e20;--lg:#a5d6a7;--lg2:#e3f4dc;--y:#f9c80e;--bad:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--dg);font:700 clamp(18px,2.2vw,26px)/1.6 Tajawal,Tahoma,Arial,sans-serif;min-height:100vh}
+.fl{position:fixed;width:110px;opacity:.5;z-index:0;pointer-events:none}
+.f1{top:8px;left:8px}.f2{bottom:8px;right:8px;width:140px}.f3{bottom:60px;left:14px;width:70px}
+main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:16px}
+h1{font-size:clamp(28px,4.5vw,52px);margin:8px 0 0;text-align:center;font-weight:800}
+.motto{text-align:center;margin:0 0 14px;color:#2e7d32}
+.card{background:var(--card);border:3px solid var(--lg);border-radius:22px;padding:18px;margin:12px 0}
+h2{margin:6px 0 12px;font-size:clamp(22px,3vw,36px);font-weight:800}
+button{font:inherit;color:var(--dg);cursor:pointer;border:3px solid var(--dg);background:var(--lg2);border-radius:14px;padding:8px 18px}
+button:hover:not(:disabled){background:var(--lg)}button:disabled{opacity:.45;cursor:not-allowed}
+button.pri{background:var(--dg);color:#fff}button.pri:hover:not(:disabled){background:#2e7d32}
+button.on{background:var(--dg);color:#fff}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.c{justify-content:center}
+input{font:inherit;padding:8px 12px;border:3px solid var(--lg);border-radius:12px;background:#fff;color:var(--dg);width:100%}
+.names{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.sb{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0}
+.chip{background:var(--dg);color:#fff;border-radius:999px;padding:4px 18px}.chip b{background:var(--y);color:var(--dg);border-radius:999px;padding:0 12px;margin-inline-start:8px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.opt{border:3px solid var(--lg);border-radius:14px;padding:8px 14px;background:#fff}.opt b{background:var(--lg);border-radius:8px;padding:0 10px;margin-inline-end:8px}
+.opt.ok{background:var(--lg);border-color:var(--dg)}
+.timer{font-size:clamp(34px,6vw,64px);font-weight:800;min-width:130px;text-align:center}.timer.end{color:var(--bad)}
+.alert{background:#fff0b3;border:3px solid var(--y);border-radius:14px;padding:8px 14px;margin-top:10px}
+.tr{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 0;border-top:2px dashed var(--lg)}.tr:first-of-type{border-top:0}
+.tr .n{flex:1 1 160px}.tr button{min-width:56px;padding:6px 12px}
+.good{color:#1b5e20}.bad{color:var(--bad)}
+.exp{background:var(--lg2);border-radius:14px;padding:10px 14px;margin-top:10px}
+.win{text-align:center}.win h2{font-size:clamp(28px,5vw,52px)}
+footer{text-align:center;margin:20px 0 8px;color:#2e7d32}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="fw" viewBox="-50 -50 100 100"><g fill="#f9c80e" stroke="#e0a800" stroke-width="1.5"><ellipse cx="0" cy="-26" rx="12" ry="20"/><ellipse cx="0" cy="-26" rx="12" ry="20" transform="rotate(72)"/><ellipse cx="0" cy="-26" rx="12" ry="20" transform="rotate(144)"/><ellipse cx="0" cy="-26" rx="12" ry="20" transform="rotate(216)"/><ellipse cx="0" cy="-26" rx="12" ry="20" transform="rotate(288)"/></g><circle r="11" fill="#e07b00"/></symbol></defs></svg>
+<svg class="fl f1"><use href="#fw" x="0" y="0" width="110" height="110"/></svg>
+<svg class="fl f2"><use href="#fw" width="140" height="140"/></svg>
+<svg class="fl f3"><use href="#fw" width="70" height="70"/></svg>
+<main><h1>🌼 تحدّي خبيرات الأزهار</h1><p class="motto">نتنافس بإنصاف، ونحترم كل مشاركة</p><div id="app"></div>
+<footer>نحمي النباتات الزهرية وملقحاتها، ونترك أثرًا جميلًا في وطننا</footer></main>
+<script>
+const Q=[
+{q:"أي جزء يحمي برعم الزهرة؟",o:["البتلات","السبلات","المتك","الميسم"],a:1,e:"تحمي السبلات برعم الزهرة قبل تفتحها."},
+{q:"أين تتكون حبوب اللقاح؟",o:["داخل المتك","داخل المبيض","على البتلات","داخل القلم"],a:0,e:"تتكون حبوب اللقاح داخل المتك، وهو جزء من السداة."},
+{q:"أي جزء يستقبل حبوب اللقاح؟",o:["الخيط","السبلة","المبيض","الميسم"],a:3,e:"الميسم هو الجزء من الكربلة الذي يستقبل حبوب اللقاح."},
+{q:"زهرة تضم أسدية وكرابل دون بتلات؛ كيف تُصنَّف من حيث الاكتمال والجنس؟",o:["كاملة وثنائية الجنس","ناقصة وأحادية الجنس","ناقصة وثنائية الجنس","كاملة وأحادية الجنس"],a:2,e:"ناقصة لغياب البتلات، وثنائية الجنس لاجتماع الأسدية والكرابل."},
+{q:"ست بتلات؛ إلى أي مجموعة تنتمي الزهرة على الأرجح؟",o:["ذوات الفلقة الواحدة","ذوات الفلقتين","يمكن الجزم بأنها من ذوات الفلقتين","لا علاقة للعدد بالتصنيف"],a:0,e:"ستة من مضاعفات الثلاثة، وهو نمط الأجزاء الزهرية في ذوات الفلقة الواحدة."},
+{q:"أي صفات الزهرة تدل على التلقيح بالرياح؟",o:["بتلات زاهية ورحيق وفير","رائحة قوية لجذب الحشرات","حبوب لقاح قليلة وثقيلة","حبوب لقاح كثيرة وخفيفة ومياسم واسعة"],a:3,e:"تساعد كثرة حبوب اللقاح وخفتها على انتشارها، وتساعد المياسم الواسعة على التقاطها."}];
+const L=["أ","ب","ج","د"],DN=["الفريق الأول","الفريق الثاني","الفريق الثالث","الفريق الرابع","الفريق الخامس","الفريق السادس"];
+let S={screen:"setup",n:3,names:DN.slice(),dur:45,r:0,teams:[],ans:[],rev:false,left:0,run:false,done:false},tm=null;
+const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=s=>"0"+Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+function stop(){clearInterval(tm);tm=null}
+function tick(){if(!S.run)return;S.left--;if(S.left<=0){S.left=0;S.run=false;S.done=true;stop();beep();render();return}const e=$("tm");if(e)e.textContent=fmt(S.left)}
+function beep(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator();o.connect(c.destination);o.frequency.value=660;o.start();o.stop(c.currentTime+.4)}catch(e){}}
+function startRound(){stop();S.ans=Array(S.teams.length).fill(null);S.rev=false;S.left=S.dur;S.run=true;S.done=false;tm=setInterval(tick,1000);render()}
+function startGame(){S.teams=S.names.slice(0,S.n).map((x,i)=>({name:x.trim()||DN[i],score:0}));S.r=0;S.screen="game";startRound()}
+function reveal(){if(S.rev||!S.ans.every(x=>x!==null))return;S.rev=true;S.run=false;stop();S.teams.forEach((t,i)=>{if(S.ans[i]===Q[S.r].a)t.score++});render()}
+function next(){if(!S.rev)return;if(S.r<Q.length-1){S.r++;startRound()}else{S.screen="end";render()}}
+function board(){return`<div class="sb">${S.teams.map(t=>`<div class="chip">${esc(t.name)}<b>${t.score}</b></div>`).join("")}</div>`}
+function render(){
+const a=$("app");
+if(S.screen==="setup"){a.innerHTML=`<div class="card"><h2>إعداد اللعبة</h2><p>اختاري عدد الفرق:</p><div class="row">${[2,3,4,5,6].map(n=>`<button data-act="n" data-v="${n}" class="${S.n===n?"on":""}">${n}</button>`).join("")}</div><p>أسماء الفرق (يمكنك تعديلها):</p><div class="names">${S.names.slice(0,S.n).map((x,i)=>`<input data-i="${i}" value="${esc(x)}" maxlength="24" aria-label="اسم الفريق ${i+1}">`).join("")}</div><p>وقت النقاش:</p><div class="row">${[30,45,60].map(d=>`<button data-act="d" data-v="${d}" class="${S.dur===d?"on":""}">${d} ثانية</button>`).join("")}</div><p><button class="pri" data-act="start">ابدئي اللعبة</button></p></div>`;return}
+if(S.screen==="game"){const q=Q[S.r],ready=S.ans.every(x=>x!==null);
+a.innerHTML=board()+`<div class="card"><div>الجولة ${S.r+1} من ${Q.length}</div><h2>${q.q}</h2><div class="opts">${q.o.map((o,i)=>`<div class="opt ${S.rev&&i===q.a?"ok":""}"><b>${L[i]}</b>${o}</div>`).join("")}</div></div>
+<div class="card"><div class="row c"><div class="timer ${S.done?"end":""}" id="tm">${fmt(S.left)}</div>${S.rev?"":`<button data-act="tg" ${S.left<=0?"disabled":""}>${S.run?"إيقاف المؤقت":"متابعة المؤقت"}</button>`}</div>${S.done&&!S.rev?`<div class="alert">⏰ انتهى وقت النقاش — يمكنك استكمال تسجيل الإجابات.</div>`:""}</div>
+<div class="card"><h2>تسجيل اختيارات الفرق</h2>${S.teams.map((t,i)=>`<div class="tr"><div class="n">${esc(t.name)} ${S.rev?(S.ans[i]===q.a?'<span class="good">✓ +١</span>':'<span class="bad">✗</span>'):""}</div>${L.map((l,j)=>`<button data-act="p" data-t="${i}" data-o="${j}" class="${S.ans[i]===j?"on":""}" ${S.rev?"disabled":""}>${l}</button>`).join("")}</div>`).join("")}
+${!S.rev&&!ready?`<div class="alert">سجّلي اختيار كل فريق لتتمكني من كشف الإجابة.</div>`:""}
+<p class="row c">${S.rev?`<button class="pri" data-act="next">${S.r<Q.length-1?"الجولة التالية":"عرض النتيجة"}</button>`:`<button class="pri" data-act="rev" ${ready?"":"disabled"}>اكشفي الإجابة</button>`}</p>
+${S.rev?`<div class="exp"><div>الإجابة الصحيحة: <b>${L[q.a]}) ${q.o[q.a]}</b></div><div>${q.e}</div></div>`:""}</div>`;return}
+const mx=Math.max(...S.teams.map(t=>t.score)),w=S.teams.filter(t=>t.score===mx);
+a.innerHTML=`<div class="card win"><h2>${w.length===1?"🏆 الفريق الفائز":"🤝 تعادل بين الفرق"}</h2><div class="row c">${w.map(t=>`<div class="chip">${esc(t.name)}<b>${t.score}</b></div>`).join("")}</div></div><h2 style="text-align:center">النتائج النهائية</h2>${board()}<p class="row c"><button class="pri" data-act="new">لعبة جديدة</button></p>`}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-act]");if(!b||b.disabled)return;const x=b.dataset;
+if(x.act==="n"){S.n=+x.v;render()}else if(x.act==="d"){S.dur=+x.v;render()}else if(x.act==="start")startGame();
+else if(x.act==="tg"){if(S.left>0){S.run=!S.run;S.run?(tm||(tm=setInterval(tick,1000))):0;render()}}
+else if(x.act==="p"){if(!S.rev){S.ans[+x.t]=+x.o;render()}}else if(x.act==="rev")reveal();else if(x.act==="next")next();
+else if(x.act==="new"){stop();S.screen="setup";render()}});
+document.addEventListener("input",e=>{if(e.target.dataset.i!==undefined)S.names[+e.target.dataset.i]=e.target.value});
+render();
+</script></body></html>
